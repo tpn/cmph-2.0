@@ -21,6 +21,12 @@ typedef struct
         int (*read)(void *, char **, cmph_uint32 *);
         void (*dispose)(void *, char *, cmph_uint32);
         void (*rewind)(void *);
+
+        //
+        // XXX: Memory map hacks.
+        //
+
+        void *base_address;
 } cmph_io_adapter_t;
 
 /** Adapter pattern API **/
@@ -57,6 +63,16 @@ void cmph_config_set_b(cmph_config_t *mph, cmph_uint32 b);
 void cmph_config_set_keys_per_bin(cmph_config_t *mph, cmph_uint32 keys_per_bin);
 void cmph_config_set_memory_availability(cmph_config_t *mph, cmph_uint32 memory_availability);
 void cmph_config_destroy(cmph_config_t *mph);
+
+//
+// XXX: Begin memory map hack.
+//
+
+void cmph_config_set_base_address_and_keylen(cmph_config_t *mph, void *base_address, cmph_uint32 keylen);
+
+//
+// XXX: End memory map hack.
+//
 
 /** Hash API **/
 cmph_t *cmph_new(cmph_config_t *mph);

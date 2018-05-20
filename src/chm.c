@@ -66,6 +66,10 @@ cmph_t *chm_new(cmph_config_t *mph, double c)
 	chm->graph = graph_new(chm->n, chm->m);
 	DEBUGP("Created graph\n");
 
+        //
+        // XXX: Only 2 hashes are used, not 3.
+        //
+
 	chm->hashes = (hash_state_t **)malloc(sizeof(hash_state_t *)*3);
 	for(i = 0; i < 3; ++i) chm->hashes[i] = NULL;
 	//Mapping step
@@ -76,8 +80,22 @@ cmph_t *chm_new(cmph_config_t *mph, double c)
 	while(1)
 	{
 		int ok;
+
+                //
+                // N.B. The hash state constructor uses rand() to generate a
+                //      new seed, such that new hashes will be produced each
+                //      iteration.
+                //
+
 		chm->hashes[0] = hash_state_new(chm->hashfuncs[0], chm->n);
 		chm->hashes[1] = hash_state_new(chm->hashfuncs[1], chm->n);
+
+                //
+                // XXX: This results in an unnecessary graph_clear_edges() upon
+                // the first invocation.  (Or graph_new() unnecessarily calls
+                // graph_clear_edges().)
+                //
+
 		ok = chm_gen_edges(mph);
 		if (!ok)
 		{
@@ -163,7 +181,7 @@ static void chm_traverse(chm_config_data_t *chm, cmph_uint8 *visited, cmph_uint3
 	}
 }
 
-static int chm_gen_edges(cmph_config_t *mph)
+static int chm_gen_edges_old(cmph_config_t *mph)
 {
 	cmph_uint32 e;
 	chm_config_data_t *chm = (chm_config_data_t *)mph->data;
@@ -189,6 +207,44 @@ static int chm_gen_edges(cmph_config_t *mph)
 		}
 		DEBUGP("Adding edge: %u -> %u for key %s\n", h1, h2, key);
 		mph->key_source->dispose(mph->key_source->data, key, keylen);
+		graph_add_edge(chm->graph, h1, h2);
+	}
+	cycles = graph_is_cyclic(chm->graph);
+	if (mph->verbosity && cycles) fprintf(stderr, "Cyclic graph generated\n");
+	DEBUGP("Looking for cycles: %u\n", cycles);
+
+	return ! cycles;
+}
+
+static int chm_gen_edges(cmph_config_t *mph)
+{
+	cmph_uint32 e;
+	chm_config_data_t *chm = (chm_config_data_t *)mph->data;
+	cmph_uint32 *p;
+	cmph_uint32 h1, h2;
+	cmph_uint32 keylen = mph->keylen;
+	int cycles = 0;
+
+	DEBUGP("Generating edges for %u vertices with hash functions %s and %s\n", chm->n, cmph_hash_names[chm->hashfuncs[0]], cmph_hash_names[chm->hashfuncs[1]]);
+	graph_clear_edges(chm->graph);
+	//mph->key_source->rewind(mph->key_source->data);
+        p = (cmph_uint32 *)mph->base_address;
+	for (e = 0; e < mph->key_source->nkeys; ++e, ++p)
+	{
+		char *key;
+		//mph->key_source->read(mph->key_source->data, &key, &keylen);
+                key = (char *)p;
+		h1 = hash(chm->hashes[0], key, keylen) % chm->n;
+		h2 = hash(chm->hashes[1], key, keylen) % chm->n;
+		if (h1 == h2) if (++h2 >= chm->n) h2 = 0;
+		if (h1 == h2)
+		{
+			if (mph->verbosity) fprintf(stderr, "Self loop for key %u\n", e);
+			//mph->key_source->dispose(mph->key_source->data, key, keylen);
+			return 0;
+		}
+		DEBUGP("Adding edge: %u -> %u for key %s\n", h1, h2, key);
+		//mph->key_source->dispose(mph->key_source->data, key, keylen);
 		graph_add_edge(chm->graph, h1, h2);
 	}
 	cycles = graph_is_cyclic(chm->graph);

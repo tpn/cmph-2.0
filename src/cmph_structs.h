@@ -12,6 +12,18 @@ struct __config_t
         cmph_uint32 verbosity;
         double c;
         void *data; // algorithm dependent data
+
+        //
+        // XXX: Begin memory map hack.
+        //
+
+        cmph_uint32 num_keys;
+        cmph_uint32 keylen;
+        void *base_address;
+
+        //
+        // XXX: End memory map hack.
+        //
 };
 
 /** Hash querying algorithm data
@@ -22,6 +34,18 @@ struct __cmph_t
         cmph_uint32 size;
         cmph_io_adapter_t *key_source;
         void *data; // algorithm dependent data
+
+        //
+        // XXX: Begin memory map hack.
+        //
+
+        cmph_uint32 num_keys;
+        cmph_uint32 keylen;
+        void *base_address;
+
+        //
+        // XXX: End memory map hack.
+        //
 };
 
 cmph_config_t *__config_new(cmph_io_adapter_t *key_source);

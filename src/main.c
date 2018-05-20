@@ -1,3 +1,7 @@
+#ifndef WIN32
+#define WIN32
+#endif
+
 #ifdef WIN32
 #include "wingetopt.h"
 #else
@@ -15,6 +19,7 @@
 
 #ifdef WIN32
 #define VERSION "0.8"
+#include <Windows.h>
 #else
 #include "config.h"
 #endif
@@ -64,6 +69,8 @@ void usage_long(const char *prg)
 	fprintf(stderr, "  keysfile\t line separated file with keys\n");
 }
 
+#define ASSERT(Condition) if (!(Condition)) { __debugbreak(); }
+
 int main(int argc, char **argv)
 {
 	cmph_uint32 verbosity = 0;
@@ -86,6 +93,24 @@ int main(int argc, char **argv)
 	cmph_uint32 memory_availability = 0;
 	cmph_uint32 b = 0;
 	cmph_uint32 keys_per_bin = 1;
+
+        //
+        // XXX: Begin custom vars.
+        //
+
+        BOOL Success;
+        //ULONG LastError;
+        PVOID BaseAddress;
+        HANDLE FileHandle;
+        HANDLE MappingHandle;
+        //LARGE_INTEGER FileSize;
+        LARGE_INTEGER NumberOfElements;
+        FILE_STANDARD_INFO FileInfo;
+
+        //
+        // XXX: End custom vars.
+        //
+
 	while (1)
 	{
 		char ch = (char)getopt(argc, argv, "hVvgc:k:a:M:b:t:f:m:d:s:");
@@ -242,9 +267,80 @@ int main(int argc, char **argv)
 		return -1;
 	}
 
-	if (seed == UINT_MAX) seed = (cmph_uint32)time(NULL);
-	if(nkeys == UINT_MAX) source = cmph_io_nlfile_adapter(keys_fd);
-	else source = cmph_io_nlnkfile_adapter(keys_fd, nkeys);
+        //
+        // XXX: Begin memory map hack.
+        //
+
+        FileHandle = CreateFileA(
+            keys_file,
+            GENERIC_READ,
+            FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
+            NULL,
+            OPEN_EXISTING,
+            FILE_FLAG_SEQUENTIAL_SCAN | FILE_FLAG_OVERLAPPED,
+            NULL
+        );
+
+        ASSERT(FileHandle && FileHandle != INVALID_HANDLE_VALUE);
+
+        Success = GetFileInformationByHandleEx(
+            FileHandle,
+            (FILE_INFO_BY_HANDLE_CLASS)FileStandardInfo,
+            &FileInfo,
+            sizeof(FileInfo)
+        );
+
+        if (!Success) {
+            fprintf(stderr, "GetFileInformationByHandleEx() failed.\n");
+            __debugbreak();
+            return -1;
+        }
+
+        ASSERT(FileInfo.EndOfFile.QuadPart % 4ULL == 0);
+
+        NumberOfElements.QuadPart = FileInfo.EndOfFile.QuadPart >> 2;
+
+        //
+        // Sanity check the number of elements.
+        //
+
+        ASSERT(!NumberOfElements.HighPart);
+
+        MappingHandle = CreateFileMappingA(
+            FileHandle,
+            NULL,
+            PAGE_READONLY,
+            FileInfo.EndOfFile.HighPart,
+            FileInfo.EndOfFile.LowPart,
+            NULL
+        );
+
+        ASSERT(MappingHandle && MappingHandle != INVALID_HANDLE_VALUE);
+
+        BaseAddress = MapViewOfFile(
+            MappingHandle,
+            FILE_MAP_READ,
+            0,
+            0,
+            FileInfo.EndOfFile.LowPart
+        );
+
+        ASSERT(BaseAddress);
+
+        //
+        // XXX: End memory map hack.
+        //
+
+        if (seed == UINT_MAX) {
+            seed = (cmph_uint32)time(NULL);
+        }
+
+        if (nkeys == UINT_MAX) {
+            source = cmph_io_nlfile_adapter(keys_fd);
+        } else {
+            source = cmph_io_nlnkfile_adapter(keys_fd, nkeys);
+        }
+
 	if (generate)
 	{
 		//Create mphf
@@ -262,6 +358,17 @@ int main(int argc, char **argv)
 		//if((mph_algo == CMPH_BMZ || mph_algo == CMPH_BRZ) && c >= 2.0) c=1.15;
 		if(mph_algo == CMPH_BMZ  && c >= 2.0) c=1.15;
 		if (c != 0) cmph_config_set_graphsize(config, c);
+
+                //
+                // XXX: Begin memory map hack.
+                //
+
+                cmph_config_set_base_address_and_keylen(config, BaseAddress, sizeof(ULONG));
+
+                //
+                // XXX: End memory map hack.
+                //
+
 		mphf = cmph_new(config);
 
 		cmph_config_destroy(config);

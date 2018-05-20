@@ -517,6 +517,16 @@ void cmph_config_set_graphsize(cmph_config_t *mph, double c)
 	return;
 }
 
+//
+// XXX: Begin memory map hack.
+//
+
+void cmph_config_set_base_address_and_keylen(cmph_config_t *mph, void *base_address, cmph_uint32 keylen)
+{
+    mph->base_address = base_address;
+    mph->keylen = keylen;
+}
+
 cmph_t *cmph_new(cmph_config_t *mph)
 {
 	cmph_t *mphf = NULL;
