@@ -11,7 +11,7 @@
 #include <assert.h>
 #include <string.h>
 
-//#define DEBUG
+#define DEBUG
 #include "debug.h"
 
 static int chm_gen_edges(cmph_config_t *mph);
@@ -65,10 +65,6 @@ cmph_t *chm_new(cmph_config_t *mph, double c)
 	DEBUGP("m (edges): %u n (vertices): %u c: %f\n", chm->m, chm->n, c);
 	chm->graph = graph_new(chm->n, chm->m);
 	DEBUGP("Created graph\n");
-
-        //
-        // XXX: Only 2 hashes are used, not 3.
-        //
 
 	chm->hashes = (hash_state_t **)malloc(sizeof(hash_state_t *)*3);
 	for(i = 0; i < 3; ++i) chm->hashes[i] = NULL;
@@ -172,7 +168,9 @@ static void chm_traverse(chm_config_data_t *chm, cmph_uint8 *visited, cmph_uint3
 	while((neighbor = graph_next_neighbor(chm->graph, &it)) != GRAPH_NO_NEIGHBOR)
 	{
 		DEBUGP("Visiting neighbor %u\n", neighbor);
-		if(GETBIT(visited,neighbor)) continue;
+                if (GETBIT(visited, neighbor)) {
+                    continue;
+                }
 		DEBUGP("Visiting neighbor %u\n", neighbor);
 		DEBUGP("Visiting edge %u->%u with id %u\n", v, neighbor, graph_edge_id(chm->graph, v, neighbor));
 		chm->g[neighbor] = graph_edge_id(chm->graph, v, neighbor) - chm->g[v];
@@ -236,17 +234,22 @@ static int chm_gen_edges(cmph_config_t *mph)
                 key = (char *)p;
 		h1 = hash(chm->hashes[0], key, keylen) % chm->n;
 		h2 = hash(chm->hashes[1], key, keylen) % chm->n;
-		if (h1 == h2) if (++h2 >= chm->n) h2 = 0;
+                if (h1 == h2) {
+                    if (++h2 >= chm->n) {
+                        h2 = 0;
+                    }
+                }
 		if (h1 == h2)
 		{
 			if (mph->verbosity) fprintf(stderr, "Self loop for key %u\n", e);
 			//mph->key_source->dispose(mph->key_source->data, key, keylen);
 			return 0;
 		}
-		DEBUGP("Adding edge: %u -> %u for key %s\n", h1, h2, key);
+		DEBUGP("Adding edge: %u -> %u for key %d\n", h1, h2, *p);
 		//mph->key_source->dispose(mph->key_source->data, key, keylen);
 		graph_add_edge(chm->graph, h1, h2);
 	}
+        graph_print(chm->graph);
 	cycles = graph_is_cyclic(chm->graph);
 	if (mph->verbosity && cycles) fprintf(stderr, "Cyclic graph generated\n");
 	DEBUGP("Looking for cycles: %u\n", cycles);
@@ -336,7 +339,9 @@ cmph_uint32 chm_search(cmph_t *mphf, const char *key, cmph_uint32 keylen)
 	cmph_uint32 h1 = hash(chm->hashes[0], key, keylen) % chm->n;
 	cmph_uint32 h2 = hash(chm->hashes[1], key, keylen) % chm->n;
 	DEBUGP("key: %s h1: %u h2: %u\n", key, h1, h2);
-	if (h1 == h2 && ++h2 >= chm->n) h2 = 0;
+        if (h1 == h2 && ++h2 >= chm->n) {
+            h2 = 0;
+        }
 	DEBUGP("key: %s g[h1]: %u g[h2]: %u edges: %u\n", key, chm->g[h1], chm->g[h2], chm->m);
 	return (chm->g[h1] + chm->g[h2]) % chm->m;
 }
@@ -431,7 +436,9 @@ cmph_uint32 chm_search_packed(void *packed_mphf, const char *key, cmph_uint32 ke
 	register cmph_uint32 h1 = hash_packed(h1_ptr, h1_type, key, keylen) % n;
 	register cmph_uint32 h2 = hash_packed(h2_ptr, h2_type, key, keylen) % n;
 	DEBUGP("key: %s h1: %u h2: %u\n", key, h1, h2);
-	if (h1 == h2 && ++h2 >= n) h2 = 0;
+        if (h1 == h2 && ++h2 >= n) {
+            h2 = 0;
+        }
 	DEBUGP("key: %s g[h1]: %u g[h2]: %u edges: %u\n", key, g_ptr[h1], g_ptr[h2], m);
 	return (g_ptr[h1] + g_ptr[h2]) % m;
 }

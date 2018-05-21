@@ -38,9 +38,11 @@ static void dummyprintf(const char *format, ...)
 #endif
 #endif
 
+//#define DEBUG
 #ifdef DEBUG
 #ifndef __GNUC__
-#define DEBUGP debugprintf
+//#define DEBUGP debugprintf
+#define DEBUGP printf
 #else
 #define DEBUGP(args...) do { fprintf(stderr, "%s:%d ", __FILE__, __LINE__); fprintf(stderr, ## args); } while(0)
 #endif

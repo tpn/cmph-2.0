@@ -428,7 +428,7 @@ static int bmz_gen_edges(cmph_config_t *mph)
 		mph->key_source->read(mph->key_source->data, &key, &keylen);
 
 		h1 = hash(bmz->hashes[0], key, keylen) % bmz->n;
-		h2 = hash(bmz->hashes[1], key, keylen) % bmz->n;
+                h2 = hash(bmz->hashes[1], key, keylen) % bmz->n;
 		if (h1 == h2) if (++h2 >= bmz->n) h2 = 0;
 		DEBUGP("key: %.*s h1: %u h2: %u\n", keylen, key, h1, h2);
 		if (h1 == h2)
