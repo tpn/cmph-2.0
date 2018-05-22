@@ -89,7 +89,9 @@ jenkins_state_t *jenkins_state_new(cmph_uint32 size) //size of hash table
 	jenkins_state_t *state = (jenkins_state_t *)malloc(sizeof(jenkins_state_t));
         if (!state) return NULL;
 	DEBUGP("Initializing jenkins hash\n");
-	state->seed = ((cmph_uint32)rand() % size);
+	//state->seed = ((cmph_uint32)rand() % size);
+	state->seed = (cmph_uint32)rand();
+        printf("Initialized seed to %u (size: %u).\n", state->seed, size);
 	return state;
 }
 void jenkins_state_destroy(jenkins_state_t *state)
@@ -228,7 +230,7 @@ void jenkins_state_dump(jenkins_state_t *state, char **buf, cmph_uint32 *buflen)
 		return;
 	}
 	memcpy(*buf, &(state->seed), sizeof(cmph_uint32));
-	DEBUGP("Dumped jenkins state with seed %u\n", state->seed);
+	printf("Dumped jenkins state with seed %u\n", state->seed);
 	return;
 }
 
@@ -237,6 +239,7 @@ jenkins_state_t *jenkins_state_copy(jenkins_state_t *src_state)
 	jenkins_state_t *dest_state = (jenkins_state_t *)malloc(sizeof(jenkins_state_t));
 	dest_state->hashfunc = src_state->hashfunc;
 	dest_state->seed = src_state->seed;
+	printf("Copied jenkins state with seed %u\n", src_state->seed);
 	return dest_state;
 }
 
@@ -245,7 +248,7 @@ jenkins_state_t *jenkins_state_load(const char *buf, cmph_uint32 buflen)
 	jenkins_state_t *state = (jenkins_state_t *)malloc(sizeof(jenkins_state_t));
 	state->seed = *(cmph_uint32 *)buf;
 	state->hashfunc = CMPH_HASH_JENKINS;
-	DEBUGP("Loaded jenkins state with seed %u\n", state->seed);
+	printf("Loaded jenkins state with seed %u\n", state->seed);
 	return state;
 }
 

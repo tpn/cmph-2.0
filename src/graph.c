@@ -8,7 +8,7 @@
 #include "vstack.h"
 #include "bitbool.h"
 
-#define DEBUG
+//#define DEBUG
 #include "debug.h"
 
 /* static const cmph_uint8 bitmask[8] = { 1, 1 << 1, 1 << 2, 1 << 3, 1 << 4, 1 << 5, 1 << 6, 1 << 7 }; */
@@ -266,7 +266,7 @@ int graph_is_cyclic(graph_t *g)
 		cyclic_del_edge(g, v, deleted);
 	}
         DEBUGP("Graph, post-cyclic_del_edge():\n");
-        graph_print(g);
+        //graph_print(g);
 	for (i = 0; i < g->nedges; ++i)
 	{
 		if (!(GETBIT(deleted, i)))

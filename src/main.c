@@ -364,6 +364,7 @@ int main(int argc, char **argv)
                 //
 
                 cmph_config_set_base_address_and_keylen(config, BaseAddress, sizeof(ULONG));
+                source->base_address = BaseAddress;
 
                 //
                 // XXX: End memory map hack.
@@ -392,7 +393,8 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		cmph_uint8 * hashtable = NULL;
+		cmph_uint32 *p;
+		cmph_uint32 *hashtable = NULL;
 		mphf_fd = fopen(mphf_file, "r");
 		if (mphf_fd == NULL)
 		{
@@ -408,33 +410,55 @@ int main(int argc, char **argv)
 			free(mphf_file);
 			return -1;
 		}
+
 		cmph_uint32 siz = cmph_size(mphf);
-		hashtable = (cmph_uint8*)calloc(siz, sizeof(cmph_uint8));
-		memset(hashtable, 0,(size_t) siz);
+		hashtable = (cmph_uint32 *)calloc(siz, sizeof(cmph_uint32));
+		cmph_uint32 *seen = (cmph_uint32*)calloc(siz, sizeof(cmph_uint32));
+		cmph_uint32 *seen2 = (cmph_uint32*)calloc(siz, sizeof(cmph_uint32));
+		//memset(hashtable, 0,(size_t) siz);
+                p = (cmph_uint32 *)BaseAddress;
 		//check all keys
-		for (i = 0; i < source->nkeys; ++i)
+		for (i = 0; i < source->nkeys; ++i, ++p)
 		{
-			cmph_uint32 h;
+			cmph_uint32 s, i2, h, h2, ht;
 			char *buf;
-			cmph_uint32 buflen = 0;
-			source->read(source->data, &buf, &buflen);
+			cmph_uint32 buflen = sizeof(ULONG);
+			//source->read(source->data, &buf, &buflen);
+                        buf = (char *)p;
+
+			h2 = cmph_search(mphf, buf, buflen);
+                        if (0 && h2 == 6394) {
+                            __debugbreak();
+                        }
 			h = cmph_search(mphf, buf, buflen);
-			if (!(h < siz))
-			{
-				fprintf(stderr, "Unknown key %*s in the input.\n", buflen, buf);
+                        s = seen[h];
+                        i2 = seen2[h];
+                        ht = hashtable[h];
+			if (!(h < siz)) {
+                                //__debugbreak();
+				//fprintf(stderr, "Unknown key %u in the input.\n", *p);
+                                fprintf(stderr, "Unknown!  i: %u, v: %u, s: %u, h: %u, ht: %u.\n", i, *p, s, h, ht);
 				ret = 1;
-			} else if(hashtable[h] >= keys_per_bin)
-			{
-				fprintf(stderr, "More than %u keys were mapped to bin %u\n", keys_per_bin, h);
-				fprintf(stderr, "Duplicated or unknown key %*s in the input\n", buflen, buf);
+                                //break;
+			} else if (ht >= keys_per_bin) {
+                                fprintf(stderr, "Conflict!  i: %u, v: %u, s: %u, h: %u, ht: %u\n", i, *p, s, h, ht);
+                                //__debugbreak();
+				//fprintf(stderr, "More than %u keys were mapped to bin %u\n", keys_per_bin, h);
+                                //fprintf(stderr, "Duplicated or unknown key %u in the input\n", *p);
 				ret = 1;
-			} else hashtable[h]++;
+                                //break;
+                        } else {
+                            seen[h] = *p;
+                            seen2[h] = i;
+                        }
+
+                        hashtable[h] = ht + 1;
 
 			if (verbosity)
 			{
-				printf("%s -> %u\n", buf, h);
+				printf("%u -> %u\n", *p, h);
 			}
-			source->dispose(source->data, buf, buflen);
+			//source->dispose(source->data, buf, buflen);
 		}
 
 		cmph_destroy(mphf);

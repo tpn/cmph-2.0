@@ -780,11 +780,14 @@ void brz_pack(cmph_t *mphf, void *packed_mphf)
 
 	for(i = 0; i < data->k; i++)
 	{
+                *g_is_ptr++ = (cmph_uint64)g_i;
+#if 0
 		#if defined (__ia64) || defined (__x86_64__)
 			*g_is_ptr++ = (cmph_uint64)g_i;
 		#else
 			*g_is_ptr++ = (cmph_uint32)g_i;
 		#endif
+#endif
 		// packing h1[i]
 		hash_state_pack(data->h1[i], g_i);
 		g_i += hash_state_packed_size(h1_type);
@@ -885,7 +888,7 @@ static cmph_uint32 brz_bmz8_search_packed(cmph_uint32 *packed_mphf, const char *
 	register cmph_uint32 m = size[h0];
 	register cmph_uint32 n = (cmph_uint32)ceil(c * m);
 
-	#if defined (__ia64) || defined (__x86_64__)
+	#if defined (__ia64) || defined (__x86_64__) || defined (_M_AMD64)
 		register cmph_uint64 * g_is_ptr = (cmph_uint64 *)packed_mphf;
 	#else
 		register cmph_uint32 * g_is_ptr = packed_mphf;
@@ -941,7 +944,7 @@ static cmph_uint32 brz_fch_search_packed(cmph_uint32 *packed_mphf, const char *k
 	register double p1 = fch_calc_p1(m);
 	register double p2 = fch_calc_p2(b);
 
-	#if defined (__ia64) || defined (__x86_64__)
+	#if defined (__ia64) || defined (__x86_64__) || defined (_M_AMD64)
 		register cmph_uint64 * g_is_ptr = (cmph_uint64 *)packed_mphf;
 	#else
 		register cmph_uint32 * g_is_ptr = packed_mphf;
