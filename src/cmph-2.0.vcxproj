@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{6634DFA9-56F5-4995-AF09-36AA35264760}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</FunctionLevelLinking>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="bdz.c" />
+    <ClCompile Include="bdz_ph.c" />
+    <ClCompile Include="bmz.c" />
+    <ClCompile Include="bmz8.c" />
+    <ClCompile Include="brz.c" />
+    <ClCompile Include="buffer_entry.c" />
+    <ClCompile Include="buffer_manager.c" />
+    <ClCompile Include="chd.c" />
+    <ClCompile Include="chd_ph.c" />
+    <ClCompile Include="chm.c" />
+    <ClCompile Include="cmph.c" />
+    <ClCompile Include="cmph_structs.c" />
+    <ClCompile Include="compressed_rank.c" />
+    <ClCompile Include="compressed_seq.c" />
+    <ClCompile Include="fch.c" />
+    <ClCompile Include="fch_buckets.c" />
+    <ClCompile Include="graph.c" />
+    <ClCompile Include="hash.c" />
+    <ClCompile Include="jenkins_hash.c" />
+    <ClCompile Include="linear_string_map.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="miller_rabin.c" />
+    <ClCompile Include="select.c" />
+    <ClCompile Include="vqueue.c" />
+    <ClCompile Include="vstack.c" />
+    <ClCompile Include="wingetopt.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bdz.h" />
+    <ClInclude Include="bdz_ph.h" />
+    <ClInclude Include="bdz_structs.h" />
+    <ClInclude Include="bdz_structs_ph.h" />
+    <ClInclude Include="bitbool.h" />
+    <ClInclude Include="bmz.h" />
+    <ClInclude Include="bmz8.h" />
+    <ClInclude Include="bmz8_structs.h" />
+    <ClInclude Include="bmz_structs.h" />
+    <ClInclude Include="brz.h" />
+    <ClInclude Include="brz_structs.h" />
+    <ClInclude Include="buffer_entry.h" />
+    <ClInclude Include="buffer_manager.h" />
+    <ClInclude Include="chd.h" />
+    <ClInclude Include="chd_ph.h" />
+    <ClInclude Include="chd_structs.h" />
+    <ClInclude Include="chd_structs_ph.h" />
+    <ClInclude Include="chm.h" />
+    <ClInclude Include="chm_structs.h" />
+    <ClInclude Include="cmph.h" />
+    <ClInclude Include="cmph_benchmark.h" />
+    <ClInclude Include="cmph_structs.h" />
+    <ClInclude Include="cmph_time.h" />
+    <ClInclude Include="cmph_types.h" />
+    <ClInclude Include="compressed_rank.h" />
+    <ClInclude Include="compressed_seq.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="fch.h" />
+    <ClInclude Include="fch_buckets.h" />
+    <ClInclude Include="fch_structs.h" />
+    <ClInclude Include="graph.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="hash_state.h" />
+    <ClInclude Include="jenkins_hash.h" />
+    <ClInclude Include="linear_string_map.h" />
+    <ClInclude Include="miller_rabin.h" />
+    <ClInclude Include="select.h" />
+    <ClInclude Include="select_lookup_tables.h" />
+    <ClInclude Include="vqueue.h" />
+    <ClInclude Include="vstack.h" />
+    <ClInclude Include="wingetopt.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
