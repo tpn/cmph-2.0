@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(Name=__jenkins_hash_vector @1 @2 OverloadingParameters=[(@16 Name=seed),(Type=&quot;const char *&quot; Name=k),@19,(Type=&quot;unsigned int *&quot; Name=hashes)] @3)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="410.63,403.5325,150.263333333333,25.96" Label="__jenkins_hash_vector" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/jenkins_hash.c StartLineNumber=98 StartCharacterOffset=0 EndLineNumber=98 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(Name=chm_dump @1 @4 OverloadingParameters=[(@7 Name=mphf),(Type=&quot;_iobuf *&quot; Name=fd)] @3)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="171.313333333333,172.9425,94.8966666666665,25.96" Label="chm_dump" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/chm.c StartLineNumber=303 StartCharacterOffset=0 EndLineNumber=303 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(Name=cmph_config_set_base_address_and_keylen @1 @2 OverloadingParameters=[@8,(Type=&quot;void *&quot; Name=base_address),@19] @3)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="0,115.295,263.523333333333,25.96" Label="cmph_config_set_base_address_and_keylen" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/cmph.c StartLineNumber=518 StartCharacterOffset=0 EndLineNumber=518 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(Name=dummyprintf @1 @2 OverloadingParameters=[(Type=&quot;const char *&quot; Name=format)] @3)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="296.22,172.9425,105.083333333333,25.96" Label="dummyprintf">
+      <Category Ref="CallStackEntry" />
+    </Node>
+    <Node Id="(Name=find_degree1_edge @1 Type=&quot;unsigned char&quot; OverloadingParameters=[@5,@17,(Type=&quot;unsigned char *&quot; Name=deleted),(Type=&quot;unsigned int *&quot; Name=e)] @3)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="681.375,403.5325,136.773333333333,25.96" Label="find_degree1_edge" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/graph.c StartLineNumber=193 StartCharacterOffset=0 EndLineNumber=193 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(Name=graph_neighbors_it @1 Type=__graph_iterator_t OverloadingParameters=[@5,@17] @3)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="837.11,288.2375,137.303333333333,25.96" Label="graph_neighbors_it" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/graph.c StartLineNumber=348 StartCharacterOffset=0 EndLineNumber=348 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(Name=graph_next_neighbor @1 @16 OverloadingParameters=[@5,(Type=&quot;__graph_iterator_t *&quot; Name=it)] @3)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="1004.82333333333,288.2375,147.876666666667,25.96" Label="graph_next_neighbor" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/graph.c StartLineNumber=356 StartCharacterOffset=0 EndLineNumber=356 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(Name=graph_print @1 @2 OverloadingParameters=[@5] @3)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="565.181666666666,288.2375,97.1599999999999,25.96" Label="graph_print" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/graph.c StartLineNumber=63 StartCharacterOffset=0 EndLineNumber=63 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@10" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="658.49,230.59,120.543333333333,25.96" Label="chm_gen_edges" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/chm.c StartLineNumber=252 StartCharacterOffset=0 EndLineNumber=252 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@11" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="313.691666666666,57.6475000000002,62.1399999999999,25.96" Label="main" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/main.c StartLineNumber=431 StartCharacterOffset=0 EndLineNumber=431 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@12" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="431.701666666666,172.9425,82.1199999999999,25.96" Label="chd_new" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/chd.c StartLineNumber=94 StartCharacterOffset=0 EndLineNumber=94 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@13" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="544.29,172.9425,100.943333333333,25.96" Label="chd_ph_new" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/chd_ph.c StartLineNumber=785 StartCharacterOffset=0 EndLineNumber=785 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@14" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="676.066666666666,172.9425,85.3899999999999,25.96" Label="chm_new" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/chm.c StartLineNumber=133 StartCharacterOffset=0 EndLineNumber=133 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@15" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="293.786666666666,115.295,101.95,25.96" Label="cmph_dump" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/cmph.c StartLineNumber=584 StartCharacterOffset=0 EndLineNumber=584 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@18" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="691.188333333333,345.885,117.146666666667,25.96" Label="cyclic_del_edge" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/graph.c StartLineNumber=230 StartCharacterOffset=0 EndLineNumber=230 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@20" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="852.98,230.59,105.563333333333,25.96" Label="chm_traverse" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/chm.c StartLineNumber=177 StartCharacterOffset=0 EndLineNumber=177 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@21" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="413.12,345.885,145.283333333333,25.96" Label="jenkins_hash_vector_" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/jenkins_hash.c StartLineNumber=218 StartCharacterOffset=0 EndLineNumber=218 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@22" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="436.463333333333,288.2375,98.5966666666668,25.96" Label="hash_vector" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/hash.c StartLineNumber=49 StartCharacterOffset=0 EndLineNumber=49 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@23" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="501.503333333333,230.59,126.516666666667,25.96" Label="chd_ph_mapping" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/chd_ph.c StartLineNumber=318 StartCharacterOffset=0 EndLineNumber=318 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@6" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="693.061666666667,288.2375,113.4,25.96" Label="graph_is_cyclic" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/graph.c StartLineNumber=266 StartCharacterOffset=0 EndLineNumber=266 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@9" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="426.54,115.295,92.4433333333334,25.96" Label="cmph_new" SourceLocation="(Assembly=file:///s:/source/cmph-2.0-pristine/src/cmph.c StartLineNumber=536 StartCharacterOffset=0 EndLineNumber=536 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="ExternalCodeRootNode" Category="ExternalCallStackEntry" Bounds="298.268333333333,0,92.9866666666667,25.96" Label="External Code">
+      <Category Ref="CallStackEntry" />
+    </Node>
+  </Nodes>
+  <Links>
+    <Link Source="@10" Target="(Name=graph_print @1 @2 OverloadingParameters=[@5] @3)" Category="CallStackDirectCall" Bounds="645.292846679688,256.549987792969,49.8268432617188,27.3561706542969" />
+    <Link Source="@10" Target="@6" Category="CallStackDirectCall" Bounds="725.74169921875,256.549987792969,12.7774047851563,23.7609252929688" />
+    <Link Source="@11" Target="(Name=cmph_config_set_base_address_and_keylen @1 @2 OverloadingParameters=[@8,(Type=&quot;void *&quot; Name=base_address),@19] @3)" Category="CallStackDirectCall" Bounds="188.40852355957,79.0364532470703,125.283157348633,33.9073257446289" />
+    <Link Source="@11" Target="@15" Category="CallStackDirectCall" Bounds="344.761657714844,83.6074981689453,0,22.6875" />
+    <Link Source="@11" Target="@9" Category="CallStackDirectCall" Bounds="373.442718505859,83.5446090698242,62.2921142578125,28.054573059082" />
+    <Link Source="@12" Target="@9" Category="CallStackDirectCall" Bounds="443.511657714844,147.015655517578,11.6874084472656,25.9268493652344" />
+    <Link Source="@13" Target="@23" Category="CallStackDirectCall" Bounds="575.671203613281,198.902496337891,12.3356323242188,23.7038726806641" />
+    <Link Source="@14" Target="@10" Category="CallStackDirectCall" Bounds="718.761657714844,198.902496337891,0,22.6875" />
+    <Link Source="@14" Target="@20" Category="CallStackDirectCall" Bounds="759.81396484375,198.577911376953,95.2418823242188,29.3607330322266" />
+    <Link Source="@15" Target="(Name=chm_dump @1 @4 OverloadingParameters=[(@7 Name=mphf),(Type=&quot;_iobuf *&quot; Name=fd)] @3)" Category="CallStackDirectCall" Bounds="255.316131591797,141.255004882813,61.0751953125,27.9430999755859" />
+    <Link Source="@18" Target="(Name=find_degree1_edge @1 Type=&quot;unsigned char&quot; OverloadingParameters=[@5,@17,(Type=&quot;unsigned char *&quot; Name=deleted),(Type=&quot;unsigned int *&quot; Name=e)] @3)" Category="CallStackDirectCall" Bounds="749.761657714844,371.845001220703,0,22.6875" />
+    <Link Source="@20" Target="(Name=graph_neighbors_it @1 Type=__graph_iterator_t OverloadingParameters=[@5,@17] @3)" Category="CallStackDirectCall" Bounds="905.761657714844,256.549987792969,0,22.6875" />
+    <Link Source="@20" Target="(Name=graph_next_neighbor @1 @16 OverloadingParameters=[@5,(Type=&quot;__graph_iterator_t *&quot; Name=it)] @3)" Category="CallStackDirectCall" Bounds="944.714599609375,256.549987792969,86.5556640625,28.8423156738281" />
+    <Link Source="@20" Target="@20" Category="CallStackDirectCall" Bounds="809.47998046875,237.095855712891,43.5,12.8113555908203" />
+    <Link Source="@21" Target="(Name=__jenkins_hash_vector @1 @2 OverloadingParameters=[(@16 Name=seed),(Type=&quot;const char *&quot; Name=k),@19,(Type=&quot;unsigned int *&quot; Name=hashes)] @3)" Category="CallStackDirectCall" Bounds="485.761657714844,371.845001220703,0,22.6875" />
+    <Link Source="@22" Target="@21" Category="CallStackDirectCall" Bounds="485.761657714844,314.197509765625,0,22.6875" />
+    <Link Source="@23" Target="@22" Category="CallStackDirectCall" Bounds="510.819610595703,256.549987792969,36.1542663574219,26.3823547363281" />
+    <Link Source="@6" Target="@18" Category="CallStackDirectCall" Bounds="749.761657714844,314.197509765625,0,22.6875" />
+    <Link Source="@9" Target="(Name=dummyprintf @1 @2 OverloadingParameters=[(Type=&quot;const char *&quot; Name=format)] @3)" Category="CallStackDirectCall" Bounds="379.107360839844,141.255004882813,60.3303833007813,27.2492218017578" />
+    <Link Source="@9" Target="@12" Category="CallStackDirectCall" Bounds="490.324279785156,141.255004882813,11.6874084472656,25.9268493652344" />
+    <Link Source="@9" Target="@13" Category="CallStackDirectCall" Bounds="506.085571289063,141.255004882813,59.304443359375,27.1222076416016" />
+    <Link Source="@9" Target="@14" Category="CallStackDirectCall" Bounds="518.867797851563,139.079483032227,148.436340332031,34.7845001220703" />
+    <Link Source="ExternalCodeRootNode" Target="@11" Category="CallStackIndirectCall" Bounds="344.761657714844,25.9599990844727,0,22.6875" />
+  </Links>
+  <Categories>
+    <Category Id="CallStackDirectCall" Label="Call Stack direct call" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Call Stack direct call" OutgoingActionLabel="Call Stack direct call" />
+    <Category Id="CallStackEntry" Label="Call Stack Entry" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Call Stack Entry" />
+    <Category Id="CallStackIndirectCall" Label="Call Stack indirect call" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Call Stack indirect call" OutgoingActionLabel="Call Stack indirect call" />
+    <Category Id="CodeSchema_CallStackUnresolvedMethod" Label="Unresolved Method" CanBeDataDriven="True" DefaultAction="Microsoft.AllOutBoundLinks" IsProviderRoot="False" NavigationActionLabel="Unresolved Method" />
+    <Category Id="CodeSchema_SourceLocation" Label="Source Location" Icon="File" />
+    <Category Id="ExternalCallStackEntry" Label="External Call Stack Entry" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="External Call Stack Entry" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="IsUnresolved" Label="Is Unresolved" ValueType="System.String" />
+    <Name Id="Name" Label="Name" ValueType="System.String" />
+    <Name Id="OverloadingParameters" Label="Parameter" ValueType="Microsoft.VisualStudio.GraphModel.GraphNodeIdCollection" Formatter="NameValueNoEscape" />
+    <Name Id="Type" Label="Type" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=cmph-2.0.exe" />
+    <Alias n="2" Id="Type=void" />
+    <Alias n="3" Id="IsUnresolved=True" />
+    <Alias n="4" Id="Type=int" />
+    <Alias n="5" Id="(Type=&quot;__graph_t *&quot; Name=g)" />
+    <Alias n="6" Id="(Name=graph_is_cyclic @1 @4 OverloadingParameters=[@5] @3)" />
+    <Alias n="7" Id="Type=&quot;__cmph_t *&quot;" />
+    <Alias n="8" Id="(Type=&quot;__config_t *&quot; Name=mph)" />
+    <Alias n="9" Id="(Name=cmph_new @1 @7 OverloadingParameters=[@8] @3)" />
+    <Alias n="10" Id="(Name=chm_gen_edges @1 @4 OverloadingParameters=[@8] @3)" />
+    <Alias n="11" Id="(Name=main @1 @4 OverloadingParameters=[(@4 Name=argc),(Type=&quot;char * *&quot; Name=argv)] @3)" />
+    <Alias n="12" Id="(Name=chd_new @1 @7 OverloadingParameters=[@8,(Type=double Name=c)] @3)" />
+    <Alias n="13" Id="(Name=chd_ph_new @1 @7 OverloadingParameters=[@8,(Type=double Name=c)] @3)" />
+    <Alias n="14" Id="(Name=chm_new @1 @7 OverloadingParameters=[@8,(Type=double Name=c)] @3)" />
+    <Alias n="15" Id="(Name=cmph_dump @1 @4 OverloadingParameters=[(@7 Name=mphf),(Type=&quot;_iobuf *&quot; Name=f)] @3)" />
+    <Alias n="16" Id="Type=&quot;unsigned int&quot;" />
+    <Alias n="17" Id="(@16 Name=v)" />
+    <Alias n="18" Id="(Name=cyclic_del_edge @1 @2 OverloadingParameters=[@5,@17,(Type=&quot;unsigned char *&quot; Name=deleted)] @3)" />
+    <Alias n="19" Id="(@16 Name=keylen)" />
+    <Alias n="20" Id="(Name=chm_traverse @1 @2 OverloadingParameters=[(Type=&quot;__chm_config_data_t *&quot; Name=chm),(Type=&quot;unsigned char *&quot; Name=visited),@17] @3)" />
+    <Alias n="21" Id="(Name=jenkins_hash_vector_ @1 @2 OverloadingParameters=[(Type=&quot;__jenkins_state_t *&quot; Name=state),(Type=&quot;const char *&quot; Name=k),@19,(Type=&quot;unsigned int *&quot; Name=hashes)] @3)" />
+    <Alias n="22" Id="(Name=hash_vector @1 @2 OverloadingParameters=[(Type=&quot;__hash_state_t *&quot; Name=state),(Type=&quot;const char *&quot; Name=key),@19,(Type=&quot;unsigned int *&quot; Name=hashes)] @3)" />
+    <Alias n="23" Id="(Name=chd_ph_mapping @1 Type=&quot;unsigned char&quot; OverloadingParameters=[@8,(Type=&quot;_chd_ph_bucket_t *&quot; Name=buckets),(Type=&quot;_chd_ph_item_t *&quot; Name=items),(Type=&quot;unsigned int *&quot; Name=max_bucket_size)] @3)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Link" GroupLabel="Current Call Stack Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CurrentCallStackCall')" />
+      <Setter Property="Stroke" Value="#FFD93701" />
+      <Setter Property="Weight" Value="1" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Call Stack Indirect Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CallStackIndirectCall')" />
+      <Setter Property="Stroke" Value="#FFB8B8B8" />
+      <Setter Property="StrokeDashArray" Value="4 1" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Call Stack Direct Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CallStackDirectCall')" />
+      <Setter Property="Stroke" Value="#FFB8B8B8" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Call Stack (no source)" ValueLabel="True">
+      <Condition Expression="HasCategory('CurrentCallStackEntry') And !HasCategory('CodeSchema_SourceLocation')" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="#FFA5A5A5" />
+      <Setter Property="Stroke" Value="#FF0072C6" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="External And Current" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('ExternalCallStackEntry') And HasCategory('CurrentCallStackEntry')" />
+      <Setter Property="Background" Value="#FFFFF8F0" />
+      <Setter Property="Stroke" Value="#FFCE5100" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Call Stack (source)" ValueLabel="True">
+      <Condition Expression="HasCategory('CurrentCallStackEntry') And !HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFFFE3C6" />
+      <Setter Property="Stroke" Value="#FFD93701" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="External Call Stack" ValueLabel="True">
+      <Condition Expression="HasCategory('ExternalCallStackEntry')" />
+      <Setter Property="Background" Value="#FFF7F7F7" />
+      <Setter Property="StrokeDashArray" Value="1 3" />
+      <Setter Property="Foreground" Value="#FF717171" />
+      <Setter Property="Stroke" Value="#FFA5A5A5" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Test Project" ValueLabel="Test Project">
+      <Condition Expression="HasCategory('CodeMap_TestProject')" />
+      <Setter Property="Icon" Value="CodeMap_TestProject" />
+      <Setter Property="Background" Value="#FF307A69" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Web Project" ValueLabel="Web Project">
+      <Condition Expression="HasCategory('CodeMap_WebProject')" />
+      <Setter Property="Icon" Value="CodeMap_WebProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Windows Store Project" ValueLabel="Windows Store Project">
+      <Condition Expression="HasCategory('CodeMap_WindowsStoreProject')" />
+      <Setter Property="Icon" Value="CodeMap_WindowsStoreProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Phone Project" ValueLabel="Phone Project">
+      <Condition Expression="HasCategory('CodeMap_PhoneProject')" />
+      <Setter Property="Icon" Value="CodeMap_PhoneProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Portable Library" ValueLabel="Portable Library">
+      <Condition Expression="HasCategory('CodeMap_PortableLibraryProject')" />
+      <Setter Property="Icon" Value="CodeMap_PortableLibraryProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="WPF Project" ValueLabel="WPF Project">
+      <Condition Expression="HasCategory('CodeMap_WpfProject')" />
+      <Setter Property="Icon" Value="CodeMap_WpfProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="VSIX Project" ValueLabel="VSIX Project">
+      <Condition Expression="HasCategory('CodeMap_VsixProject')" />
+      <Setter Property="Icon" Value="CodeMap_VsixProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Modeling Project" ValueLabel="Modeling Project">
+      <Condition Expression="HasCategory('CodeMap_ModelingProject')" />
+      <Setter Property="Icon" Value="CodeMap_ModelingProject" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Assembly" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Namespace" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Interface" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Struct" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enumeration" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Delegate" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Class" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF0E70C0" />
+      <Setter Property="Stroke" Value="#FF0E70C0" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Method" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Method') Or HasCategory('CodeSchema_CallStackUnresolvedMethod')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Event" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out Parameter" ValueLabel="Has category">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Parameter" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Local Variable" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Externals" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True">
+      <Condition Expression="HasCategory('InheritsFrom')" />
+      <Setter Property="Stroke" Value="#FF00A600" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True">
+      <Condition Expression="HasCategory('Implements')" />
+      <Setter Property="Stroke" Value="#8000A600" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Calls" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_Calls')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Function Pointer" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FunctionPointer')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Read" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Write" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_FieldWrite')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="DrawArrow" Value="true" />
+      <Setter Property="IsHidden" Value="false" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Disabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="DisabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="EnabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Instruction Pointer Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsInstructionPointerLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Callstack Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCurrentCallstackFrame" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Return" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_ReturnTypeLink')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="References" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('References')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Uses Attribute" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeSchema_AttributeUse')" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Solution Folder" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CodeMap_SolutionFolder')" />
+      <Setter Property="Background" Value="#FFDEBA83" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Project Reference" ValueLabel="Project Reference">
+      <Condition Expression="HasCategory('CodeMap_ProjectReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="External Reference" ValueLabel="External Reference">
+      <Condition Expression="HasCategory('CodeMap_ExternalReference')" />
+      <Setter Property="Stroke" Value="#9A9A9A" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Comment" ValueLabel="Has comment">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>
